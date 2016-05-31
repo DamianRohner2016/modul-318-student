@@ -123,14 +123,18 @@ namespace SwissTransportForm
 
                         //Abfahrt umformatieren
                         string dateTime = con.From.Departure;
+                        string Time = con.To.Arrival;
+                        DateTime td = Convert.ToDateTime(Time);
                         DateTime dt = Convert.ToDateTime(dateTime);
 
                         //Liste abfüllen
                         ListViewItem newconnection = new ListViewItem();
                         newconnection.Text = (con.From.Station.Name);
                         newconnection.SubItems.Add(con.To.Station.Name);
-                        newconnection.SubItems.Add(loc_dur);
+                        newconnection.SubItems.Add(loc_dur + " min");
+                        newconnection.SubItems.Add(con.From.Platform);
                         newconnection.SubItems.Add(dt.Hour + ":" + dt.Minute);
+                        newconnection.SubItems.Add(td.Hour + ":" + td.Minute);
                         Listview_Station.Items.Add(newconnection);
 
                     }
@@ -250,12 +254,26 @@ namespace SwissTransportForm
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void emailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl1.Visible = false;
+
+            Email newMDIChild = new Email(this);
+            newMDIChild.MdiParent = this;
+            newMDIChild.Show();
+
+
+            //Schluss 
+            //tabControl1.Visible = true;
+        }
+
     }
 }

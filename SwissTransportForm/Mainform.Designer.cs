@@ -65,6 +65,7 @@
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.emailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             Gleis = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -86,7 +87,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(639, 452);
+            this.tabControl1.Size = new System.Drawing.Size(642, 452);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseClick);
             // 
@@ -105,7 +106,7 @@
             this.tabPage3.Controls.Add(this.destination_from);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(631, 426);
+            this.tabPage3.Size = new System.Drawing.Size(634, 426);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Verbindungen";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -245,7 +246,7 @@
             this.tabPage4.Controls.Add(this.destination_text);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(631, 426);
+            this.tabPage4.Size = new System.Drawing.Size(634, 426);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Abfahrt";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -337,7 +338,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(631, 426);
+            this.tabPage1.Size = new System.Drawing.Size(634, 426);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Map";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -348,7 +349,7 @@
             this.webBrowser1.Location = new System.Drawing.Point(3, 3);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(625, 420);
+            this.webBrowser1.Size = new System.Drawing.Size(628, 420);
             this.webBrowser1.TabIndex = 0;
             // 
             // toolStrip1
@@ -367,6 +368,7 @@
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.optionsToolStripMenuItem,
+            this.emailToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -394,6 +396,13 @@
             this.toolStripLabel1.Text = "Schweizer öffentlicher Verkehr";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
+            // emailToolStripMenuItem
+            // 
+            this.emailToolStripMenuItem.Name = "emailToolStripMenuItem";
+            this.emailToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.emailToolStripMenuItem.Text = "Email";
+            this.emailToolStripMenuItem.Click += new System.EventHandler(this.emailToolStripMenuItem_Click);
+            // 
             // Mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,6 +411,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
             this.Name = "Mainform";
             this.Text = "ÖV";
             this.Load += new System.EventHandler(this.Mainform_Load);
@@ -420,7 +430,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        public System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label2;
@@ -437,11 +447,11 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox destination_text;
-        private System.Windows.Forms.ListView Listview_Verbindungen;
+        public System.Windows.Forms.ListView Listview_Verbindungen;
         private System.Windows.Forms.ColumnHeader Von;
         private System.Windows.Forms.ColumnHeader Nach;
         private System.Windows.Forms.ColumnHeader Zeit;
-        private System.Windows.Forms.ListView Listview_Station;
+        public System.Windows.Forms.ListView Listview_Station;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -455,6 +465,7 @@
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripMenuItem emailToolStripMenuItem;
     }
 }
 
