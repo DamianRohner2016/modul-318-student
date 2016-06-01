@@ -157,7 +157,6 @@
             this.label5.Size = new System.Drawing.Size(73, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "Verbindungen";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // but_search
             // 
@@ -394,7 +393,6 @@
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(153, 22);
             this.toolStripLabel1.Text = "Schweizer öffentlicher Verkehr";
-            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
             // emailToolStripMenuItem
             // 

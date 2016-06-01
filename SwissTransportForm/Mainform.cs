@@ -165,6 +165,7 @@ namespace SwissTransportForm
         {
             if (textBox.Text.Length >= 3)
             {
+                //Autocomplete für Station
                 var transport = new Transport();
                 List<String> suggestetStations = new List<string>();
                 List<Station> stations = transport.GetStations(textBox.Text).StationList;
@@ -252,27 +253,16 @@ namespace SwissTransportForm
             this.Close();
         }
 
-        private void toolStripLabel1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void emailToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Tabcontrol unsichtbar stellen
             tabControl1.Visible = false;
 
+            //Neues Fenster anzeigen
             Email newMDIChild = new Email(this);
             newMDIChild.MdiParent = this;
             newMDIChild.Show();
 
-
-            //Schluss 
-            //tabControl1.Visible = true;
         }
 
     }

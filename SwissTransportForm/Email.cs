@@ -17,13 +17,16 @@ namespace SwissTransportForm
         
         public Email( Mainform Eltern )
         {
+            //Mit Parentform "verbinden"
             meltern = Eltern;
             InitializeComponent();
         }
 
+        //Senden Logik
         private void button1_Click(object sender, EventArgs e)
         {
 
+            //Mail Daten
             string absender = "dok514testmail@gmail.com";
             string empfaenger = adresse.Text;
             string betreff = betreff1.Text;
@@ -33,6 +36,7 @@ namespace SwissTransportForm
             string user = "dok514testmail@gmail.com";
             string passwort = "wasserfall";
 
+            //Fahrplan & Abfahrplan Inhalte ins Mail einfügen
             foreach (ListViewItem Item in meltern.Listview_Verbindungen.Items)
             {
                 nachricht += Environment.NewLine;
@@ -52,6 +56,7 @@ namespace SwissTransportForm
             
         }
 
+        //Mail senden
         public void sendMail(string absender, string empfaenger,
                               string betreff, string nachricht,
                               string server, int port,
@@ -88,8 +93,11 @@ namespace SwissTransportForm
         private void button2_Click(object sender, EventArgs e)
         {
 
+            //Tabcontrol wieder Visible stellen
             meltern.tabControl1.Visible = true;
 
+
+            //schliessen
             this.Close();
 
         }
